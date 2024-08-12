@@ -1,9 +1,8 @@
 // flashcard.jsx
 import React, { useState, useEffect } from 'react';
-const cors = require('cors');
 import { useNavigate } from 'react-router-dom';
 import './flashcard.css';
-app.use(cors());
+
 
 function Flashcard() {
   const [flashcards, setFlashcards] = useState([]);
@@ -15,7 +14,7 @@ function Flashcard() {
   const navigate = useNavigate(); 
 
   useEffect(() => {
-    fetch('https://github.com/MohammadBinAftab/flashcard/tree/main/api/flashcards')
+    fetch('api/flashcards')
       .then((response) => response.json())
       .then((data) => {
         if (Array.isArray(data) && data.length > 0) {
