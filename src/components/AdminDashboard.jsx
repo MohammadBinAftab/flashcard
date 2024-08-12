@@ -1,10 +1,12 @@
 // AdminDashboard.js
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const AdminDashboard = () => {
   const [flashcards, setFlashcards] = useState([]);
   const [newCard, setNewCard] = useState({ question: '', answer: '' });
   const [editCard, setEditCard] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch('http://localhost:5000/flashcards')
@@ -57,6 +59,9 @@ const AdminDashboard = () => {
     }).then(() => setFlashcards(flashcards.filter((card) => card.id !== id)));
   };
 
+  const goToFlashcards = () => {
+    navigate('/flashcards');
+  };
   return (
     <div style={styles.container}>
       <h2>Admin Dashboard</h2>
@@ -105,6 +110,9 @@ const AdminDashboard = () => {
           </div>
         ))}
       </div>
+      <button onClick={goToFlashcards} style={styles.navButton}>
+        Go to Flashcards
+      </button>
     </div>
   );
 };
