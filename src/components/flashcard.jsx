@@ -13,7 +13,7 @@ function Flashcard() {
   const navigate = useNavigate(); 
 
   useEffect(() => {
-    fetch('http://api/flashcards')
+    fetch('https://flashcard-seven-beta.vercel.app/api/flashcards')
       .then((response) => response.json())
       .then((data) => {
         if (Array.isArray(data) && data.length > 0) {
