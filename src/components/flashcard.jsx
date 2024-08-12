@@ -1,7 +1,9 @@
 // flashcard.jsx
 import React, { useState, useEffect } from 'react';
+const cors = require('cors');
 import { useNavigate } from 'react-router-dom';
 import './flashcard.css';
+app.use(cors());
 
 function Flashcard() {
   const [flashcards, setFlashcards] = useState([]);
