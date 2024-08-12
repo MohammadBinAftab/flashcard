@@ -13,7 +13,7 @@ function Flashcard() {
   const navigate = useNavigate(); 
 
   useEffect(() => {
-    fetch('http://localhost:5000/flashcards')
+    fetch('http://api/flashcards')
       .then((response) => response.json())
       .then((data) => {
         if (Array.isArray(data) && data.length > 0) {
