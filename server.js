@@ -8,10 +8,10 @@ app.use(cors());
 app.use(express.json());
 
 const db = mysql.createPool({
-  host: 'localhost',
-  user: 'root', // replace with your MySQL username
-  password: '1234', // replace with your MySQL password
-  database: 'flashcards_db', // replace with your database name
+  host: 'bxi0fter7gq2y5rkk80a-mysql.services.clever-cloud.com',
+  user: 'uzw4h2eoru3gb4xj', 
+  password: 'BEzrKoFxAwm0zSzF5FYc',
+  database: 'bxi0fter7gq2y5rkk80a',
 });
 
 // Get all flashcards
