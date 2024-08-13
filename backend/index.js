@@ -1,8 +1,13 @@
-const express = require('express');
+const express = require("express");
+const cors = require("cors");
 const mysql = require('mysql2');
-const cors = require('cors');
 
 const app = express();
+
+// Middlewares
+app.use(express.json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
     origin: ["https://flashcard-seven-beta.vercel.app/", "http://localhost:5173"],
@@ -12,7 +17,6 @@ app.use(
     optionsSuccessStatus: 200,
   })
 );
-app.use(express.json());
 
 const db = mysql.createPool({
   host: 'bxi0fter7gq2y5rkk80a-mysql.services.clever-cloud.com',
