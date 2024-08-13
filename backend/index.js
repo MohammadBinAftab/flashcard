@@ -1,27 +1,18 @@
-const express = require("express");
-const cors = require("cors");
+// index.js
+
+const express = require('express');
 const mysql = require('mysql2');
+const cors = require('cors');
 
 const app = express();
-
-// Middlewares
+app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(
-  cors({
-    origin: ["https://flashcard-seven-beta.vercel.app", "http://localhost:5173"],
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
-    optionsSuccessStatus: 200,
-  })
-);
 
 const db = mysql.createPool({
-  host: process.env.DB_HOST || 'bxi0fter7gq2y5rkk80a-mysql.services.clever-cloud.com',
-  user: process.env.DB_USER || 'uzw4h2eoru3gb4xj', 
-  password: process.env.DB_PASSWORD || 'BEzrKoFxAwm0zSzF5FYc',
-  database: process.env.DB_NAME || 'bxi0fter7gq2y5rkk80a',
+  host: 'bxi0fter7gq2y5rkk80a-mysql.services.clever-cloud.com',
+  user: 'uzw4h2eoru3gb4xj', 
+  password: 'BEzrKoFxAwm0zSzF5FYc',
+  database: 'bxi0fter7gq2y5rkk80a',
 });
 
 // Get all flashcards
