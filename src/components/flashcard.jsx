@@ -14,7 +14,7 @@ function Flashcard() {
   const navigate = useNavigate(); 
 
   useEffect(() => {
-    fetch('./api/index.js')
+    fetch('https://flashcard-5-1eoe.onrender.com')
       .then((response) => response.json())
       .then((data) => {
         if (Array.isArray(data) && data.length > 0) {
