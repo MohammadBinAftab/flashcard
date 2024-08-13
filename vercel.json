@@ -1,3 +1,0 @@
-{ 
-  "version": 2, 
-  "routes": [{ "source": ./index.js", "destination": "/api" }] }
