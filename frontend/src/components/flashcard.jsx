@@ -6,6 +6,7 @@ function Flashcard() {
   const [flashcards, setFlashcards] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const navigate = useNavigate();
 
@@ -42,7 +43,7 @@ function Flashcard() {
   };
 
   const reportProblem = () => {
-    navigate('/report');
+    navigate('/report');  // Navigate to the report page
   };
 
   const currentCard = flashcards[currentIndex];
@@ -62,10 +63,10 @@ function Flashcard() {
 
           <div className="buttons-container">
             <div className="navigation-buttons">
-              <button onClick={prevCard}>
+              <button onClick={prevCard} className='report-button'>
                 <span className="material-symbols-outlined">arrow_back_ios</span> Previous
               </button>
-              <button onClick={nextCard}>
+              <button onClick={nextCard} className='report-button'>
                 <span className="material-symbols-outlined">arrow_forward_ios</span> Next
               </button>
             </div>
