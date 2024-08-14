@@ -9,7 +9,7 @@ const AdminDashboard = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('http://localhost:5000/flashcards')
+    fetch('https://flashcard-5-1eoe.onrender.com/flashcards')
       .then((response) => response.json())
       .then((data) => setFlashcards(data));
   }, []);
