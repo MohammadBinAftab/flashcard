@@ -7,8 +7,7 @@
 .navigation-buttons {
   display: flex;
   justify-content: center;
-  gap: 10px; /* Add space between Previous and Next buttons */
-  margin: 20px 0;
+  gap: 10px; /* Space between Previous and Next buttons */
 }
 
 .report-button {
