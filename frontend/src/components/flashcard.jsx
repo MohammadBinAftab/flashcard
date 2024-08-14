@@ -1,9 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './flashcard.css';
-
-
 
 function Flashcard() {
   const [flashcards, setFlashcards] = useState([]);
@@ -11,10 +8,9 @@ function Flashcard() {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const navigate = useNavigate();
 
-  const navigate = useNavigate(); 
-
- useEffect(() => {
+  useEffect(() => {
     fetch('https://flashcard-5-1eoe.onrender.com/flashcards')
       .then((response) => {
         if (!response.ok) {
@@ -46,29 +42,23 @@ function Flashcard() {
     setIsFlipped(false);
   };
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
-  
-
   const reportProblem = () => {
     navigate('/report');  // Navigate to the report page
   };
 
   const currentCard = flashcards[currentIndex];
 
-
   return (
     <div className="flashcard-container">
       {flashcards.length > 0 ? (
         <>
           <div className={`flashcard ${isFlipped ? 'flipped' : ''}`} onClick={flipCard}>
-            {isFlipped ? currentCard.answer : currentCard.question}
+            <div className="flashcard-front">
+              {currentCard.question}
+            </div>
+            <div className="flashcard-back">
+              {currentCard.answer}
+            </div>
           </div>
 
           <div className="navigation-buttons">
@@ -83,8 +73,6 @@ function Flashcard() {
       <button onClick={reportProblem} className="report-button">
         Report a Problem
       </button>
-
-   
     </div>
   );
 }
