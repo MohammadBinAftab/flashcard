@@ -6,7 +6,7 @@ const cors = require('cors');
 
 const app = express();
 app.use(cors({
-  origin: 'https://flashcard1.vercel.app',
+  origin: ["https://flashcard1.vercel.app", "https://flashcard1.vercel.app/admin"],
 }));
 app.use(express.json());
 
