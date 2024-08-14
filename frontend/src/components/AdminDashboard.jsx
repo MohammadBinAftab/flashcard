@@ -30,7 +30,7 @@ const AdminDashboard = () => {
   };
 
   const addFlashcard = () => {
-    fetch('http://localhost:5000/flashcards', {
+    fetch('https://flashcard-5-1eoe.onrender.com/flashcards/flashcards', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ const AdminDashboard = () => {
   };
 
   const updateFlashcard = () => {
-    fetch(`http://localhost:5000/flashcards/${editCard.id}`, {
+    fetch(`https://flashcard-5-1eoe.onrender.com/flashcards/${editCard.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ const AdminDashboard = () => {
   };
 
   const deleteFlashcard = (id) => {
-    fetch(`http://localhost:5000/flashcards/${id}`, {
+    fetch(`https://flashcard-5-1eoe.onrender.com/flashcards/${id}`, {
       method: 'DELETE',
     }).then(() => setFlashcards(flashcards.filter((card) => card.id !== id)));
   };
