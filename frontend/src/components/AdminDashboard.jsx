@@ -1,10 +1,5 @@
-// AdminDashboard.js
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-const express = require('express');
-const cors = require('cors');
-const app = express();
 
 const AdminDashboard = () => {
   const [flashcards, setFlashcards] = useState([]);
@@ -14,10 +9,11 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     fetch('https://flashcard-5-1eoe.onrender.com/flashcards', {
-      mode: 'cors' // This ensures CORS is being handled
+      mode: 'cors'
     })
       .then((response) => response.json())
-      .then((data) => setFlashcards(data));
+      .then((data) => setFlashcards(data))
+      .catch((error) => console.error('Error fetching flashcards:', error));
   }, []);
 
   const handleInputChange = (e) => {
@@ -39,7 +35,8 @@ const AdminDashboard = () => {
     })
       .then((response) => response.json())
       .then((card) => setFlashcards([...flashcards, card]))
-      .then(() => setNewCard({ question: '', answer: '' }));
+      .then(() => setNewCard({ question: '', answer: '' }))
+      .catch((error) => console.error('Error adding flashcard:', error));
   };
 
   const editFlashcard = (id) => {
@@ -53,21 +50,26 @@ const AdminDashboard = () => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(editCard),
-    }).then(() => {
-      setFlashcards(flashcards.map((card) => (card.id === editCard.id ? editCard : card)));
-      setEditCard(null);
-    });
+    })
+      .then(() => {
+        setFlashcards(flashcards.map((card) => (card.id === editCard.id ? editCard : card)));
+        setEditCard(null);
+      })
+      .catch((error) => console.error('Error updating flashcard:', error));
   };
 
   const deleteFlashcard = (id) => {
     fetch(`https://flashcard-5-1eoe.onrender.com/flashcards/${id}`, {
       method: 'DELETE',
-    }).then(() => setFlashcards(flashcards.filter((card) => card.id !== id)));
+    })
+      .then(() => setFlashcards(flashcards.filter((card) => card.id !== id)))
+      .catch((error) => console.error('Error deleting flashcard:', error));
   };
 
   const goToFlashcards = () => {
     navigate('/flashcards');
   };
+
   return (
     <div style={styles.container}>
       <h2>Admin Dashboard</h2>
