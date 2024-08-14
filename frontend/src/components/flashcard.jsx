@@ -2,9 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './flashcard.css';
-const express = require('express');
-const cors = require('cors');
-const app = express();
+
 
 
 function Flashcard() {
@@ -17,9 +15,7 @@ function Flashcard() {
   const navigate = useNavigate(); 
 
  useEffect(() => {
-    fetch('https://flashcard-5-1eoe.onrender.com/flashcards', {
-      mode: 'cors' // This ensures CORS is being handled
-    })
+    fetch('https://flashcard-5-1eoe.onrender.com/flashcards')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
