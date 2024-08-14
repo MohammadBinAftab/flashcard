@@ -70,3 +70,24 @@ button:hover {
 .signin-button:hover {
   background-color: #218838;
 }
+
+
+/* flashcard.css */
+.report-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.report-button .material-symbols-outlined {
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+.report-button:hover {
+  background-color: #0056b3;
+}
