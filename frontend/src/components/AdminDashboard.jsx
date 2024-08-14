@@ -2,6 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+const express = require('express');
+const cors = require('cors');
+const app = express();
+
 const AdminDashboard = () => {
   const [flashcards, setFlashcards] = useState([]);
   const [newCard, setNewCard] = useState({ question: '', answer: '' });
@@ -9,7 +13,9 @@ const AdminDashboard = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('https://flashcard-5-1eoe.onrender.com/flashcards')
+    fetch('https://flashcard-5-1eoe.onrender.com/flashcards', {
+      mode: 'cors' // This ensures CORS is being handled
+    })
       .then((response) => response.json())
       .then((data) => setFlashcards(data));
   }, []);
