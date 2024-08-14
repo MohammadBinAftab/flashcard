@@ -62,8 +62,8 @@ function Flashcard() {
           </div>
 
           <div className="navigation-buttons">
-            <button onClick={prevCard}>Previous</button>
-            <button onClick={nextCard}>Next</button>
+            <button onClick={prevCard} className='report-button'><span className="material-symbols-outlined">Arrow_Back_iOS</span>Previous</button>
+            <button onClick={nextCard} className='report-button'><span className="material-symbols-outlined">Arrow_Back_iOS</span>Next</button>
           </div>
         </>
       ) : (
@@ -71,7 +71,7 @@ function Flashcard() {
       )}
 
       <button onClick={reportProblem} className="report-button">
-        Report a Problem
+        <span className="material-symbols-outlined">report_problem</span> Report a Problem
       </button>
     </div>
   );
