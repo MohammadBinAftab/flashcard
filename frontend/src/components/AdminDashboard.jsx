@@ -30,7 +30,7 @@ const AdminDashboard = () => {
   };
 
   const addFlashcard = () => {
-    fetch('https://flashcard-5-1eoe.onrender.com/flashcards/flashcards', {
+    fetch('https://flashcard-5-1eoe.onrender.com/flashcards', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
