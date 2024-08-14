@@ -69,7 +69,7 @@ function Flashcard() {
       ) : (
         <p>Loading flashcards...</p>
       )}
-
+     
       <button onClick={reportProblem} className="report-button">
         <span className="material-symbols-outlined">report_problem</span> Report a Problem
       </button>
