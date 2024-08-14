@@ -7,12 +7,12 @@
 .navigation-buttons {
   display: flex;
   justify-content: center;
+  gap: 10px; /* Add space between Previous and Next buttons */
   margin: 20px 0;
-  gap: 10px;  /* Add space between buttons */
 }
 
 .report-button {
-  background-color: red;  /* No change in color */
+  background-color: red; /* No change in color */
   color: white;
   border: none;
   padding: 10px 20px;
@@ -20,7 +20,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  margin-top: 10px;  /* Add margin to separate from navigation buttons */
+  margin-top: 10px; /* Space between navigation buttons and Report button */
 }
 
 .report-button .material-symbols-outlined {
@@ -29,14 +29,13 @@
 
 .flashcard-container .buttons-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   gap: 20px; /* Space between the navigation buttons and report button */
-  flex-wrap: wrap; /* Wrap buttons if the screen size is small */
 }
 
-.navigation-buttons button,
-.report-button {
-  background-color: #007bff;
+.navigation-buttons button {
+  background-color: #007bff; /* No change in color */
   color: white;
   border: none;
   padding: 10px 20px;
@@ -46,7 +45,6 @@
   align-items: center;
 }
 
-.navigation-buttons .material-symbols-outlined,
-.report-button .material-symbols-outlined {
+.navigation-buttons .material-symbols-outlined {
   margin-right: 8px;
 }
