@@ -61,23 +61,18 @@ function Flashcard() {
             </div>
           </div>
 
-          <div className="buttons-container">
-            <div className="navigation-buttons">
-              <button onClick={prevCard} className='report-button'>
-                <span className="material-symbols-outlined">arrow_back_ios</span> Previous
-              </button>
-              <button onClick={nextCard} className='report-button'>
-                <span className="material-symbols-outlined">arrow_forward_ios</span> Next
-              </button>
-            </div>
-            <button onClick={reportProblem} className="report-button">
-              <span className="material-symbols-outlined">report_problem</span> Report a Problem
-            </button>
+          <div className="navigation-buttons">
+            <button onClick={prevCard} className='report-button'><span className="material-symbols-outlined">Arrow_Back_iOS</span>Previous</button>
+            <button onClick={nextCard} className='report-button'><span className="material-symbols-outlined">Arrow_Back_iOS</span>Next</button>
           </div>
         </>
       ) : (
         <p>Loading flashcards...</p>
       )}
+
+      <button onClick={reportProblem} className="report-button">
+        <span className="material-symbols-outlined">report_problem</span> Report a Problem
+      </button>
     </div>
   );
 }
