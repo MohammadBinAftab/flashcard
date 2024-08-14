@@ -45,6 +45,10 @@
 
 .navigation-buttons {
   margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%; /* Ensures buttons take up full width */
+  max-width: 300px; /* Limits the width to the size of the flashcard */
 }
 
 button {
