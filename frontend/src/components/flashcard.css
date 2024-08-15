@@ -1,3 +1,17 @@
+body {
+  background-image: url('Photo.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .flashcard-container {
   display: flex;
   flex-direction: column;
