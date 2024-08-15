@@ -60,7 +60,7 @@ function Flashcard() {
               {currentCard.answer}
             </div>
           </div>
-
+        </div>
           <div className="navigation-buttons">
             <button onClick={prevCard} className='report-button'><span className="material-symbols-outlined">Arrow_Back_iOS</span>Previous</button>
             <button onClick={nextCard} className='report-button'>Next<span className="material-symbols-outlined">Arrow_Forward_iOS</span></button>
@@ -73,7 +73,6 @@ function Flashcard() {
       <button onClick={reportProblem} className="report-button">
         <span className="material-symbols-outlined">report_problem</span> Report a Problem
       </button>
-    </div>
   );
 }
 
